@@ -1,0 +1,31 @@
+class BikeShop:
+    def __init__(self,stock):
+        self.stock=stock
+    def displayBikes(self):
+        print("Total Bikes",self.stock)
+    def rentforbike(self,q):
+        if q<=0:
+            print("Enter positive value or greater than zero")
+        elif q>100:
+            print("Enter the value (less than stock)")
+        else:
+            print("Total Prices:",q*250)
+            m=self.stock-q
+            print("Total Bikes:",m)
+
+while True:
+    obj=BikeShop(100)
+    userchoice=int(input('''
+    1. Display the stocks
+    2. Rent for Bike
+    3. Exit
+    '''))
+    if userchoice==1:
+        obj.displayBikes()
+    elif userchoice==2:
+        n=int(input("Enter the quantity:--"))
+        obj.rentforbike(n)
+    elif userchoice==3:
+        break
+    else:
+        print("Select a valid number")
